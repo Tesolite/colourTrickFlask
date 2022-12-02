@@ -1,0 +1,160 @@
+* {
+    font-size: 100%;
+    font-family: "Lucida Console";
+}
+
+
+.grid-container {
+    max-width: 100%;
+    max-height: 100%;
+    display: grid;
+    grid-template-rows: 25% 50% 25%;
+    grid-template-columns: 33% 33% 33%;
+    grid-gap: 30px;
+    width: 100%;
+    height: 100%;
+}
+
+.gamebuttons {
+    margin: 50px;
+    padding: 25px 50px;
+    color: black;
+    background-color: white;
+    font-size: 30px;
+    text-align: center;
+    cursor: pointer;
+}
+.gamebuttons:hover {
+    background: linear-gradient(rgba(231, 241, 246, 0.05), rgba(68, 67, 67, 0.75));
+    animation: changeColour 0.25s, changeTextWhite 0.25s;
+    animation-fill-mode: forwards;
+}
+
+.gamespace{
+    align-items: center;
+    grid-column-start: 2;
+    grid-row-start: 2;
+    grid-column: 2;
+    grid-row-end: 2;
+    background-color: white;
+    display: flex;  
+    flex-direction: column;
+}
+
+.timerspace{
+    grid-column: 3;
+    grid-row-start: 1;
+}
+
+.scorespace{
+    grid-column: 1;
+    grid-row-start: 1;
+    align-items:flex-end;
+}
+
+#main {
+
+    text-align: center;
+    background-color: rgb(255, 255, 255);
+    border-radius: 0px;
+    margin: 0px;
+    padding: 10%;
+
+}
+
+#retry{
+    text-align:center;
+    margin: 0;
+}
+
+#timer{
+    text-align:left;
+}
+
+#score {
+    text-align: right;
+}
+
+#guideMatch{
+    grid-column-start: 2;
+    grid-row-start: 3;
+    text-align: left;
+    font-size: 30px;
+}
+#guideDifference{
+    grid-column-start: 2;
+    grid-row-start: 3;
+    text-align: right;
+    font-size: 30px;
+}
+
+.playNewComboAnimation{
+    animation: newCombo 0.1s;
+}
+
+.playNoTimeAnimation{
+    animation: noTime 0.75s infinite;
+}
+
+
+@keyframes changeColour {
+    from {
+        background-color: inherit, inherit, inherit, 0.75;
+    }
+
+    to {
+        background-color: rgb(116, 116, 116);
+    }
+}
+
+@keyframes changeTextWhite{
+    from{
+        color: black;
+    }
+    to{
+        color:white;
+    }
+}
+
+@keyframes rainbowz {
+    0% {color: red;}
+    7% {color: orange;}
+    15% {color: yellow;}
+    22% {color: rgb(7, 219, 7);}
+    30% {color: rgb(0, 153, 255);}
+    37% {color: rgb(255, 0, 221);}
+    45% {color: violet;}
+    53% {color: violet;}
+    60% {color: rgb(255, 0, 221);}
+    67% {color: rgb(0, 153, 255);}
+    75% {color: rgb(7, 219, 7);}
+    83% {color: yellow;}
+    91% {color: orange;}
+    100% {color: red;}
+}
+
+@keyframes newCombo{
+    0%{ transform: scale(3,3) rotate(-15deg); }
+    33%{ transform: scale(2,2) rotate(-5deg); }
+    66%{ transform: scale(1.5,1.5) rotate(0deg); }
+    100%{ transform: scale(1,1); }
+
+}
+
+@keyframes noTime {
+    0% {color: black;}
+    50%{color: red;}
+    100% {color: black;}
+}
+
+
+html, body {
+    margin: 0;
+    height: 100%;
+}
+
+body {
+    background-color: rgb(255, 255, 255);
+    max-width: 100%;
+    overflow-x: hidden;
+}

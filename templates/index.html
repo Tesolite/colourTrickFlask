@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='stylesheets/styling.css')}}" type="text/css" id="webstyle" />
+    <script src="{{url_for('static', filename='scripts/coding.js')}}"></script>
+</head>
+
+<body onload="checkUser()">
+	<form name="newHighscorePrompt" method="post" style="display: none;">
+		<input type="text" id="usernameForm" name="usernameForm" placeholder="user">
+		<input type="text" id="highscoreForm" name="highscoreForm" placeholder="highscore">
+	</form>
+    <div class="grid-container">
+        <div class="navigation">
+            <nav id="navbar">
+		    <img id="logo" alt="colourtrick" src="{{url_for('static', filename='images/logo.png')}}" style="width:180px;height:38px"></a>
+                
+            </nav>
+        </div>
+        <div class="content">
+            <button type="button" id="btnstart" class="menubuttons" onclick="enterGame()">Start Game!</button>
+            <button type="button" id="btnprofile" class="menubuttons" onclick="showProfile()">Profile</button>
+            <button type="button" id="btnlb" class="menubuttons" onclick="window.open('/leaderboard');">Leaderboards</button>
+        </div>
+        <div id="newUserWindow" style="display: none;">
+            <form class="newUserPrompt">
+                <p><span id="newUserText">New user</span> detected!</p>
+                <p>
+                <p>Please enter a unique username to track your highscore!</p>
+                <p id="usernameCriteria">14 characters max, no symbols</p>
+                <input type="text" id="usernameInput" placeholder="Enter username...">
+                <button type="submit" class="profileButton" onclick="getUsername()">Set Username</button>
+            </form>
+        </div>
+
+        <div id="userProfile" style="display: none;">
+            <p id="profileUsername">User ID: </p>
+            <p id="profileHighscore">Highscore: </p>
+            <p id="profileRank">Rank: </p>
+	    <button type="button" class="profileButton" onclick="submitHighscore()">Submit Highscore!</button>
+            <button type="button" id="clearData" onclick="clearUserData()">CLEAR DATA</button>
+        </div>
+    </div>
+</body>
+
+</html>

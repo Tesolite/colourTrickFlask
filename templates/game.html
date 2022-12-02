@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static',filename='stylesheets/gamestyling.css')}}" type="text/css" id="webstyle" />
+    <script src="{{ url_for('static',filename='scripts/coding.js')}}"></script>
+</head>
+<style>
+    #main {
+        -webkit-text-stroke: 1px black;
+        font-size: 100px;
+    }
+
+    #timer {
+        -webkit-text-stroke: 1px black;
+        font-size: 50px;
+    }
+
+    #score {
+        -webkit-text-stroke: 1px black;
+        font-size: 50px;
+    }
+</style>
+
+<audio id="press" src="{{ url_for('static',filename='audio/press.mp3')}}"></audio>
+<audio id="fail" src="{{ url_for('static', filename='audio/fail.mp3')}}"></audio>
+
+
+<body onload="startGame()">
+    <div class="grid-container">
+        <div class="gamespace">
+            <p id="main">Game</p>
+            <div class="buttonsSpace">
+                <button type="button" id="homeButton" class="gamebuttons" style="display: none;"
+                    onclick="goHome();">Home</button>
+                <button type="button" id="retryButton" class="gamebuttons" style="display: none;"
+                    onclick="startGame();">Retry</button>
+		<form class="newHighscorePrompt" style="display: none;">
+			<input type="text" id="highscoreForm">
+		</form>
+
+            </div>
+        </div>
+        <div class="timerspace">
+            <p id="timer">Timer:</p>
+        </div>
+        <div class="scorespace">
+            <p id="score">Score: 0</p>
+        </div>
+        <p id="guideMatch">← = Match</p>
+        <p id="guideDifference">Differ = →</p>
+    </div>
+</body>
+
+</html>
